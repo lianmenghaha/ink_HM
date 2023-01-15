@@ -1,5 +1,6 @@
 package shape;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,10 +11,22 @@ public class Tile {
 
     private Map<Polygon, Double> dryScoreInc;
 
+    private ArrayList<RowTile> aboveRowTiles;
+
 
     public Tile(int xInd, int yInd){
         this.dryScoreInc = new HashMap<>();
+        this.aboveRowTiles = new ArrayList<>();
 
+    }
+
+
+    public ArrayList<RowTile> getAboveRowTiles() {
+        return aboveRowTiles;
+    }
+
+    public void addToAboveRowTiles(RowTile rowTile) {
+        this.aboveRowTiles.add(rowTile);
     }
 
     public int getxInd() {
@@ -88,5 +101,12 @@ public class Tile {
         this.dryScoreInc.put(poly, dryScoreIncrease);
     }
 
+    public double getWidth(){
+        return (this.maxX - this.minX);
+    }
+
+    public double getHeight(){
+        return (this.maxY - this.minY);
+    }
 
 }

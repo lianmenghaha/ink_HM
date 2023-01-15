@@ -1,4 +1,4 @@
-package Document;
+package parser;
 
 import java.util.ArrayList;
 

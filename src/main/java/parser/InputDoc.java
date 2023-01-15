@@ -1,4 +1,4 @@
-package Document;
+package parser;
 
 
 import shape.Polygon;
@@ -33,19 +33,13 @@ public class InputDoc {
         this.allRowTiles = new ArrayList<>();
     }
 
-    public InputDoc(String name, int xtile, int ytile, double unit, double sigma, Rectangle chip) {
+    public InputDoc(String name, Rectangle chip, ArrayList<Polygon> polygons, ArrayList<Tile> tiles, ArrayList<RowTile> rowTiles) {
         this.name = name;
-        this.xtile = xtile;
-        this.ytile = ytile;
-        this.unit = unit;
-        this.sigma = sigma;
         this.chip = chip;
 
-        this.allPolys = new ArrayList<>();
-        this.allSubRects = new ArrayList<>();
-        this.mapNameToPoly = new HashMap<>();
-        this.allTiles = new ArrayList<>();
-        this.allRowTiles = new ArrayList<>();
+        this.allPolys = polygons;
+        this.allTiles = tiles;
+        this.allRowTiles = rowTiles;
     }
 
     public Rectangle getChip() {
@@ -135,6 +129,5 @@ public class InputDoc {
     public void addToAllRowTiles(RowTile rowTile) {
         this.allRowTiles.add(rowTile);
     }
-
 
 }
