@@ -1,0 +1,21 @@
+Layer1
+LayerPrintScore = 543.0
+LayerDryScore = 272.0
+Layer2
+LayerPrintScore = 633.0
+LayerDryScore = 256.0
+Layer3
+LayerPrintScore = 1198.0
+LayerDryScore = 321.0
+Layer4
+LayerPrintScore = 726.0
+LayerDryScore = 297.0
+Layer5
+LayerPrintScore = 584.0
+LayerDryScore = 360.0
+Layer6
+LayerPrintScore = 515.0
+LayerDryScore = 417.0
+Layer7
+LayerPrintScore = 526.0
+LayerDryScore = 413.0

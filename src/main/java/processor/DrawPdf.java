@@ -66,13 +66,13 @@ public class DrawPdf {
                     .rectangle(rect)
                     .fill()
                     .stroke();
-            dsTile = layer.getOriDryTile();
+            /*dsTile = layer.getOriDryTile();
             Rectangle oriRect = new Rectangle((float) dsTile.getMinX(), (float) dsTile.getMinY(), (float) (dsTile.getMaxX() - dsTile.getMinX()), (float) (dsTile.getMaxY() - dsTile.getMinY()));
             canvas.setColor(CRIMSON, true)
                     .setLineWidth((float) 0.1)
                     .rectangle(oriRect)
                     .fill()
-                    .stroke();
+                    .stroke();*/
             for (Tile tile : output.getAllTiles()){
                 Rectangle rectTile = new Rectangle((float) tile.getMinX(), (float) tile.getMinY(), (float) (tile.getMaxX() - tile.getMinX()), (float) (tile.getMaxY() - tile.getMinY()));
                 canvas.setColor(LIME, false)

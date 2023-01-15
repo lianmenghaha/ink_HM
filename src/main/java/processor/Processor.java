@@ -72,6 +72,7 @@ public class Processor {
         int findOptSumPDScore = Integer.MAX_VALUE;
 
         for (int sol_cnt = 0; sol_cnt < solutions.size(); ++sol_cnt) {
+            System.out.println("sol_cnt= " + sol_cnt);
             Solution sol = solutions.get(sol_cnt);
 
             int solutionPrintScore = 0;
@@ -104,7 +105,7 @@ public class Processor {
                 /*
                 Layer DryScore Calculation
                  */
-                ArrayList<Double> allTileDs = new ArrayList<>();
+                //ArrayList<Double> allTileDs = new ArrayList<>();
                 for (Tile tile : input.getAllTiles()){
                     /*
                     DryScore of each Tile
@@ -113,7 +114,7 @@ public class Processor {
                     for (Polygon poly : layer.getLayerPolys()){
                         tileDs += tile.getDryScoreInc().get(poly);
                     }
-                    allTileDs.add(tileDs);
+                    //allTileDs.add(tileDs);
                     tileDs = (int) Math.round(tileDs * dry_a + dry_b);
 
                     /*
@@ -132,9 +133,9 @@ public class Processor {
                     int deltaT = (int) Math.round(tileDs - tilePs);
                     layer.addToMapTileToDryScore(tile, deltaT);
                 }
-                double oriDs = Collections.max(allTileDs);
-                int tileIndex = allTileDs.indexOf(oriDs);
-                layer.setOriDryTile(input.getAllTiles().get(tileIndex));
+                //double oriDs = Collections.max(allTileDs);
+                //int tileIndex = allTileDs.indexOf(oriDs);
+                //layer.setOriDryTile(input.getAllTiles().get(tileIndex));
 
                 /*
                 Find the tile with maximum Rest DryTime
@@ -173,10 +174,6 @@ public class Processor {
                 System.out.print(polygon.name + " ");
             }
             System.out.println();*/
-        }
-        for (Layer layer : optimalSolution.getLayers()){
-            System.out.println(layer.getLayerDryScore());
-
         }
 
 

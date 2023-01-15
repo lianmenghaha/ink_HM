@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
-public class test_New2022 {
+public class test_New2022_20_after {
 
     public static void main (String[] args) throws FileNotFoundException {
 
@@ -16,8 +16,8 @@ public class test_New2022 {
         System.out.println("Program Starts at: "+ DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss.SSS").format(start));
 
         Processor processor = new Processor();
-        OutputDoc outputDoc = processor.process("input_HM/NEW2022_test");
-        DrawPdf drawPdf = new DrawPdf(outputDoc, "result_HM/NEW2022_test");
+        OutputDoc outputDoc = processor.process("input_HM/NEW2022_rowUnit20_after1000");
+        DrawPdf drawPdf = new DrawPdf(outputDoc, "result_HM/NEW2022_rowUnit20_after1000");
 
         LocalDateTime end = LocalDateTime.now();
         Duration duration = Duration.between(start,end);
