@@ -175,6 +175,14 @@ public class Processor {
             }
             System.out.println();*/
         }
+        System.out.println("LayerPrintScore:");
+        for (Layer layer : optimalSolution.getLayers()){
+            System.out.println(layer.getLayerPrintScore());
+        }
+        System.out.println("LayerDryScore:");
+        for (Layer layer : optimalSolution.getLayers()){
+            System.out.println(layer.getLayerDryScore());
+        }
 
 
         OutputDoc output = new OutputDoc(input.getName(), input.getChip(), input.getAllPolys(), input.getAllTiles(), input.getAllRowTiles(), optimalSolution);

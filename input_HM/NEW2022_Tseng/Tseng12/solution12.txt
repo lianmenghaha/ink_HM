@@ -1,0 +1,16 @@
+Solution0 73
+Layer1 9
+
+Layer2 10
+ 
+Layer3 8
+
+Layer4 6
+
+Layer5 16
+ 
+Layer6 7
+ 
+Layer7 17
+ 
+FIN

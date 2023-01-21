@@ -1,0 +1,4 @@
+xtile 109
+ytile 84
+unit 2.060000
+FIN

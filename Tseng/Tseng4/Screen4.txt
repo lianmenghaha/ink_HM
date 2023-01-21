@@ -1,0 +1,939 @@
+/Users/lianmeng/.zshrc:6: module_init: function definition file not found
+lianmeng@diedies-MacBook-Pro SilDeco % cd Prog
+lianmeng@diedies-MacBook-Pro Prog % sh cmd_option.sh 13
+
+                Case: NEW2022
+                
+
+PHASE 1: MINIMIZE LAYER NUMBER
+
+Start building variables (phase 1):
+End building variables (phase 1). 350 variables.
+Start building constraints (phase 1):
+End building constraints (phase 1). 3868 constraints.
+Gurobi start
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-07-18
+Set parameter TimeLimit to value 1000
+Set parameter MIPGapAbs to value 0
+Set parameter MIPGap to value 0
+Set parameter MIPFocus to value 1
+Gurobi Optimizer version 9.5.0 build v9.5.0rc5 (mac64[arm])
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 3868 rows, 1968 columns and 10972 nonzeros
+Model fingerprint: 0x70e06320
+Variable types: 0 continuous, 1968 integer (1618 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+06]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 3e+02]
+  RHS range        [1e+00, 1e+06]
+Presolve removed 85 rows and 52 columns
+Presolve time: 0.02s
+Presolved: 3783 rows, 1916 columns, 10802 nonzeros
+Variable types: 0 continuous, 1916 integer (1618 binary)
+
+Root relaxation: objective 5.000000e+00, 1175 iterations, 0.03 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    5.00000    0  130          -    5.00000      -     -    0s
+H    0     0                      10.0000000    5.00000  50.0%     -    0s
+H    0     0                       9.0000000    5.00000  44.4%     -    0s
+H    0     0                       8.0000000    5.00000  37.5%     -    0s
+     0     0    5.33333    0  360    8.00000    5.33333  33.3%     -    0s
+     0     0    5.33333    0  365    8.00000    5.33333  33.3%     -    1s
+     0     0    6.00000    0  173    8.00000    6.00000  25.0%     -    1s
+     0     0    6.00000    0  135    8.00000    6.00000  25.0%     -    1s
+     0     0    6.00000    0   78    8.00000    6.00000  25.0%     -    2s
+     0     0    6.00000    0   28    8.00000    6.00000  25.0%     -    2s
+     0     0    6.00000    0   79    8.00000    6.00000  25.0%     -    3s
+     0     0    6.00000    0   89    8.00000    6.00000  25.0%     -    3s
+H    0     0                       7.0000000    6.00000  14.3%     -    3s
+     0     0    6.00000    0   47    7.00000    6.00000  14.3%     -    3s
+     0     0    7.00000    0   58    7.00000    7.00000  0.00%     -    3s
+
+Cutting planes:
+  Learned: 2
+  Gomory: 10
+  Cover: 3
+  Implied bound: 13
+  Clique: 1
+  MIR: 20
+  Zero half: 3
+
+Explored 1 nodes (8784 simplex iterations) in 3.63 seconds (0.42 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 4: 7 8 9 10 
+
+Optimal solution found (tolerance 0.00e+00)
+Best objective 7.000000000000e+00, best bound 7.000000000000e+00, gap 0.0000%
+Gurobi end
+o185 8.67799 setco: o186 o187 o152 o155 o184 | setbo: o182 
+o186 8.67799 setco: o185 o187 o192 o194 o221 o225 o153 o158 o160 o184 | setbo: o182 
+o187 8.68751 setco: o185 o186 o188 o192 o194 o195 o184 | setbo: o182 
+o188 31.6305 setco: o187 o191 o198 o183 | setbo: o185 o182 
+o189 0.898695 setco: o191 o152 o156 | setbo: o188 o183 
+o190 12.567 setco: o191 o151 o154 
+o191 9.02487 setco: o188 o189 o190 o220 o231 o181 
+o192 32.1716 setco: o186 o187 o221 o222 o225 o227 o230 o237 o160 o182 
+o193 1.77339 setco: o231 | setbo: o190 o191 
+o194 8.67799 setco: o186 o187 o195 o196 o197 o221 o225 o153 o160 o182 | setbo: o192 
+o195 8.6916 setco: o187 o194 o196 o197 o182 | setbo: o192 
+o196 8.67799 setco: o194 o195 o197 o221 o222 o225 o227 o230 o233 o237 | setbo: o192 
+o197 8.6916 setco: o194 o195 o196 o199 o222 o228 o230 | setbo: o192 
+o198 3.06308 setco: o188 o223 o229 | setbo: o191 o199 
+o199 32.5006 setco: o197 o223 o229 o232 | setbo: o192 o195 
+o200 12.5387 setco: o201 o164 o171 
+o201 7.79532 setco: o200 o210 o218 o241 o251 o165 o170 
+o202 32.1489 setco: o211 o212 o216 o217 o219 o226 o233 o236 o238 o246 o252 o256 o257 o258 o266 o169 
+o203 1.77562 setco: o241 | setbo: o200 o201 
+o204 8.67459 setco: o205 o206 o207 o209 o211 o212 o216 o217 o219 o163 o169 | setbo: o202 
+o205 8.67136 setco: o204 o206 o207 o211 o217 o221 o226 o233 o236 o238 | setbo: o202 
+o206 8.68751 setco: o204 o205 o207 o212 o219 o242 o246 o252 o255 o256 o257 o261 | setbo: o202 
+o207 8.67799 setco: o204 o205 o206 o233 o238 o252 o257 o258 o264 o266 | setbo: o202 
+o208 3.86567 setco: o212 o218 o244 o249 o253 o254 o261 o165 o170 | setbo: o201 o209 
+o209 37.739 setco: o204 o212 o218 o219 o244 o249 o254 o255 o261 | setbo: o202 o206 
+o210 12.5387 setco: o201 o171 
+o211 32.1489 setco: o202 o204 o205 o219 o221 o224 o226 o236 o138 o146 o147 o159 o163 o167 o169 o178 
+o212 36.6469 setco: o202 o204 o206 o208 o209 o253 o254 o169 
+o213 4.03856 setco: o165 | setbo: o210 o218 
+o214 8.67459 setco: o215 o216 o217 o138 o146 o147 o163 o167 o173 o178 | setbo: o211 
+o215 8.68496 setco: o214 o216 o217 o221 o224 o226 o138 o147 o153 o159 | setbo: o211 
+o216 8.67391 setco: o202 o204 o214 o215 o217 o163 o167 o169 | setbo: o211 
+o217 8.67799 setco: o202 o204 o205 o214 o215 o216 o221 o226 o233 o236 | setbo: o211 
+o218 4.6765 setco: o201 o208 o209 o253 o254 o165 o170 | setbo: o212 
+o219 2.22902 setco: o202 o204 o206 o209 o211 o163 o169 | setbo: o212 o216 
+o220 12.5387 setco: o191 o232 
+o221 32.1489 setco: o186 o192 o194 o196 o205 o211 o215 o217 o230 o233 o236 o237 o147 o153 o159 o160 
+o222 1.21125 setco: o192 o196 o197 o237 o240 | setbo: o228 o230 
+o223 4.03856 setco: o198 o199 | setbo: o220 o229 
+o224 8.67799 setco: o211 o215 o225 o226 o227 o138 o147 o153 o159 o160 | setbo: o221 
+o225 8.68751 setco: o186 o192 o194 o196 o224 o226 o227 o153 o160 o182 | setbo: o221 
+o226 8.68411 setco: o202 o205 o211 o215 o217 o224 o225 o227 o233 o236 | setbo: o221 
+o227 8.67799 setco: o192 o196 o224 o225 o226 o233 o236 o237 | setbo: o221 
+o228 35.1837 setco: o197 o230 o234 o237 o240 o265 
+o229 4.34767 setco: o198 o199 o232 o234 o240 o265 | setbo: o228 
+o230 2.23364 setco: o192 o196 o197 o221 o228 o233 o237 | setbo: o227 
+o231 12.5387 setco: o191 o193 o232 
+o232 7.7976 setco: o199 o220 o229 o231 o262 o272 
+o233 32.1489 setco: o196 o202 o205 o207 o217 o221 o226 o227 o230 o258 o263 o264 o266 o267 o271 o276 
+o234 3.42298 setco: o228 o229 o263 o265 o270 o273 | setbo: o232 o240 
+o235 1.77249 setco: o272 | setbo: o231 o232 
+o236 8.67799 setco: o202 o205 o211 o217 o221 o226 o227 o237 o238 o239 | setbo: o233 
+o237 8.67391 setco: o192 o196 o221 o222 o227 o228 o230 o236 o238 o239 o263 o271 | setbo: o233 
+o238 8.69773 setco: o202 o205 o207 o236 o237 o239 o252 o258 o264 o266 | setbo: o233 
+o239 8.67799 setco: o236 o237 o238 o240 o263 o264 o266 o267 o271 o274 o276 | setbo: o233 
+o240 37.4776 setco: o222 o228 o229 o239 o263 o265 o271 | setbo: o233 o237 
+o241 12.5528 setco: o201 o203 o244 
+o242 32.1432 setco: o206 o252 o255 o256 o257 o259 o284 o286 o287 
+o243 1.96817 | setbo: o241 o244 
+o244 6.26551 setco: o208 o209 o241 o251 o254 o261 o282 
+o245 8.67051 setco: o246 o247 o248 o250 o255 o256 o261 | setbo: o242 
+o246 8.67697 setco: o202 o206 o245 o247 o248 o252 o255 o256 o257 o259 | setbo: o242 
+o247 8.67697 setco: o245 o246 o248 o284 o286 | setbo: o242 
+o248 8.68411 setco: o245 o246 o247 o252 o259 o284 o286 o287 | setbo: o242 
+o249 4.02698 setco: o208 o209 o254 o261 o282 o283 o285 | setbo: o244 o250 
+o250 35.0906 setco: o245 o283 | setbo: o242 o247 
+o251 12.5528 setco: o201 o244 
+o252 32.1262 setco: o202 o206 o207 o238 o242 o246 o248 o256 o264 o266 o268 o287 
+o253 2.72767 setco: o208 o212 o218 | setbo: o251 o254 
+o254 2.93607 setco: o208 o209 o212 o218 o244 o249 | setbo: o261 
+o255 1.0102 setco: o206 o209 o242 o245 o246 | setbo: o256 o261 
+o256 2.42789 setco: o202 o206 o242 o245 o246 o252 o261 | setbo: o257 
+o257 8.67051 setco: o202 o206 o207 o242 o246 o258 o259 o260 | setbo: o252 
+o258 8.67136 setco: o202 o207 o233 o238 o257 o259 o260 o264 o266 o268 | setbo: o252 
+o259 8.67391 setco: o242 o246 o248 o257 o258 o260 o284 o287 | setbo: o252 
+o260 8.67391 setco: o257 o258 o259 o264 o268 | setbo: o252 
+o261 36.2748 setco: o206 o208 o209 o244 o245 o249 o256 
+o262 12.5528 setco: o232 o273 
+o263 38.1324 setco: o233 o234 o237 o239 o240 o273 o280 
+o264 32.1262 setco: o207 o233 o238 o239 o252 o258 o260 o271 o274 o276 o278 
+o265 2.29748 setco: o228 o229 o234 o240 o273 o280 | setbo: o263 o270 
+o266 8.67391 setco: o202 o207 o233 o238 o239 o252 o258 o267 o268 o269 | setbo: o264 
+o267 8.67391 setco: o233 o239 o266 o268 o269 o274 o276 o278 | setbo: o264 
+o268 8.68411 setco: o252 o258 o260 o266 o267 o269 | setbo: o264 
+o269 8.67391 setco: o266 o267 o268 o274 o278 | setbo: o264 
+o270 2.53342 setco: o234 | setbo: o262 
+o271 2.55513 setco: o233 o237 o239 o240 o264 o274 o276 | setbo: o263 o267 
+o272 12.5528 setco: o232 o235 o273 
+o273 6.45806 setco: o234 o262 o263 o265 o272 
+o274 32.1489 setco: o239 o264 o267 o269 o271 
+o275 1.77249 | setbo: o272 o273 
+o276 8.67391 setco: o233 o239 o264 o267 o271 o277 o278 o279 | setbo: o274 
+o277 8.67799 setco: o276 o278 o279 | setbo: o274 
+o278 8.67799 setco: o264 o267 o269 o276 o277 o279 | setbo: o274 
+o279 8.68751 setco: o276 o277 o278 o281 | setbo: o274 
+o280 3.38513 setco: o263 o265 | setbo: o273 o281 
+o281 34.7828 setco: o279 | setbo: o274 o277 
+o282 12.5528 setco: o244 o249 o283 
+o283 6.58911 setco: o249 o250 o282 | setbo: o290 
+o284 32.1432 setco: o242 o247 o248 o259 
+o285 1.25086 setco: o249 | setbo: o282 o283 
+o286 8.67816 setco: o242 o247 o248 o287 o288 o289 o290 | setbo: o284 
+o287 8.67697 setco: o242 o248 o252 o259 o286 o288 o289 | setbo: o284 
+o288 8.67357 setco: o286 o287 o289 | setbo: o284 
+o289 8.68411 setco: o286 o287 o288 o311 | setbo: o284 
+o290 35.2343 setco: o286 | setbo: o284 o288 
+o291 0.844472 setco: o292 
+o292 0.844472 setco: o291 o293 
+o293 0.844472 setco: o292 o294 
+o294 0.844472 setco: o293 o295 
+o295 0.842208 setco: o294 o296 
+o296 0.842208 setco: o295 o297 
+o297 0.844472 setco: o296 o298 
+o298 0.844472 setco: o297 o299 o311 
+o299 0.844472 setco: o298 o300 o311 
+o300 0.844472 setco: o299 o311 
+o301 0.844472 setco: o302 
+o302 0.844472 setco: o301 o303 
+o303 0.846736 setco: o302 o304 
+o304 0.844472 setco: o303 o305 
+o305 0.844472 setco: o304 o306 
+o306 0.844472 setco: o305 o307 
+o307 0.844472 setco: o306 o308 
+o308 0.844472 setco: o307 o309 
+o309 0.842208 setco: o308 o310 
+o310 0.842208 setco: o309 
+o311 24.5061 setco: o289 o298 o299 o300 | setbo: o313 
+o312 12.5528 
+o313 40.4399 | setbo: o312 
+o314 14.1585 | setbo: o317 
+o315 6.33637 | setbo: o317 
+o316 12.5528 
+o317 28.5342 setco: o319 o328 o329 
+o318 4.30024 | setbo: o315 o316 
+o319 8.34171 setco: o317 
+o320 8.34171 
+o321 12.5528 
+o322 25.5548 | setbo: o321 
+o323 12.9652 | setbo: o326 
+o324 12.5528 
+o325 8.67225 | setbo: o323 
+o326 28.2559 
+o327 3.98658 | setbo: o324 o326 
+o328 4.01776 setco: o317 
+o329 3.82487 setco: o317 | setbo: o328 
+o330 4.01776 
+o331 3.81812 | setbo: o330 
+o332 12.5387 
+o333 12.5528 
+o334 12.5528 
+o335 3.60961 | setbo: o333 o334 
+o336 12.5528 
+o337 2.00534 
+o338 2.00534 
+o339 12.5528 
+o340 12.5528 
+o341 12.5528 
+o342 3.60961 | setbo: o340 o341 
+o343 12.5528 
+o344 2.00534 
+o345 2.00534 
+o346 2.00534 
+o347 2.00534 
+o348 2.00534 
+o349 2.00534 
+o93 8.66796 setco: o94 o95 o102 o105 o107 o5 o12 o16 o22 o92 | setbo: o90 
+o94 8.68751 setco: o93 o95 o114 o116 o92 | setbo: o90 
+o95 8.67544 setco: o93 o94 o102 o107 o114 o116 o118 o125 o127 o92 | setbo: o90 
+o96 2.41871 setco: o117 o123 | setbo: o99 o91 
+o97 1.77584 setco: o135 | setbo: o89 o91 
+o98 7.121 setco: o114 o116 o86 | setbo: o94 o90 
+o99 26.8882 setco: o117 o121 o123 
+o100 1.81946 setco: o86 | setbo: o98 o99 
+o101 12.5528 setco: o103 
+o102 32.1489 setco: o93 o95 o118 o125 o127 o129 o12 o16 o22 o23 o46 o90 
+o103 11.6122 setco: o101 o124 o149 o80 
+o104 26.9212 setco: o126 o128 o133 o134 
+o105 8.67799 setco: o93 o106 o107 o108 o5 o12 o16 o22 o23 o90 | setbo: o102 
+o106 8.67051 setco: o105 o107 o108 o16 o23 o41 o46 | setbo: o102 
+o107 8.69773 setco: o93 o95 o105 o106 o108 o114 o118 o125 o127 o90 | setbo: o102 
+o108 8.67544 setco: o105 o106 o107 o109 o125 o127 o129 | setbo: o102 
+o109 7.26748 setco: o108 o82 | setbo: o102 o106 
+o110 1.77271 setco: o149 | setbo: o101 o103 
+o111 2.94501 setco: o126 o82 | setbo: o104 o109 
+o112 1.58061 setco: o128 o133 | setbo: o103 o104 
+o113 12.5528 setco: o136 o91 
+o114 32.1262 setco: o94 o95 o98 o107 o125 o127 o130 o138 o141 o142 o145 o157 o176 o90 
+o115 28.6091 setco: o121 o136 o137 o140 o143 
+o116 8.67051 setco: o94 o95 o98 o118 o119 o120 o121 o90 | setbo: o114 
+o117 6.58865 setco: o96 o99 | setbo: o113 
+o118 8.67136 setco: o95 o102 o107 o116 o119 o120 o125 o127 o130 o90 | setbo: o114 
+o119 8.67391 setco: o116 o118 o120 o137 o138 o141 o142 o148 o173 o176 | setbo: o114 
+o120 8.68156 setco: o116 o118 o119 o125 o130 o138 o142 o145 o153 o157 | setbo: o114 
+o121 6.27062 setco: o99 o115 o116 o137 o140 o148 | setbo: o114 o119 
+o122 0.497146 setco: o137 o140 | setbo: o115 o121 
+o123 1.94115 setco: o96 o99 o136 o143 | setbo: o115 o117 
+o124 12.5528 setco: o103 o151 
+o125 32.1262 setco: o95 o102 o107 o108 o114 o118 o120 o145 o150 o153 o157 o158 o161 o184 
+o126 0.890189 setco: o104 o111 o150 o155 | setbo: o132 o134 
+o127 8.67391 setco: o95 o102 o107 o108 o114 o118 o129 o130 o131 o90 | setbo: o125 
+o128 6.58922 setco: o104 o112 o132 | setbo: o124 
+o129 8.67391 setco: o102 o108 o127 o130 o131 o150 o161 | setbo: o125 
+o130 8.68411 setco: o114 o118 o120 o127 o129 o131 o138 o145 o153 o157 | setbo: o125 
+o131 8.68156 setco: o127 o129 o130 o134 o150 o153 o157 o158 o161 o182 o184 | setbo: o125 
+o132 28.0939 setco: o128 o134 o150 o151 o155 o156 
+o133 1.30217 setco: o104 o112 o151 o156 | setbo: o128 o132 
+o134 6.36428 setco: o104 o131 o132 o150 o155 o161 | setbo: o125 o129 
+o135 12.5528 setco: o97 o136 o91 
+o136 10.3256 setco: o113 o115 o123 o135 o162 o172 
+o137 3.71583 setco: o115 o119 o121 o122 o141 o144 o175 
+o138 32.1262 setco: o211 o214 o215 o224 o114 o119 o120 o130 o141 o153 o157 o159 o167 o173 o176 o178 
+o139 1.77584 setco: o162 | setbo: o135 o136 
+o140 1.54128 setco: o115 o121 o122 o173 o175 | setbo: o137 o144 
+o141 2.44074 setco: o114 o119 o137 o138 o173 o175 o176 | setbo: o142 
+o142 8.68071 setco: o114 o119 o120 o145 o146 o147 o173 o176 | setbo: o138 
+o143 1.66019 setco: o115 o123 o174 o180 | setbo: o136 o144 
+o144 29.8905 setco: o137 o173 o174 o175 o180 
+o145 8.67136 setco: o114 o120 o125 o130 o142 o146 o147 o153 o157 o159 | setbo: o138 
+o146 8.67391 setco: o211 o214 o142 o145 o147 o163 o167 o173 o176 o178 | setbo: o138 
+o147 8.67391 setco: o211 o214 o215 o221 o224 o142 o145 o146 o153 o159 | setbo: o138 
+o148 0.817304 setco: o119 o121 o173 o175 o176 | setbo: o137 o141 
+o149 12.5528 setco: o103 o110 o151 
+o150 5.38423 setco: o125 o126 o129 o131 o132 o134 o152 o184 
+o151 10.3279 setco: o190 o124 o132 o133 o149 o152 o181 
+o152 29.6524 setco: o185 o189 o150 o151 o183 
+o153 32.1262 setco: o186 o194 o215 o221 o224 o225 o120 o125 o130 o131 o138 o145 o147 o161 o182 o184 
+o154 1.77271 setco: o190 | setbo: o149 o151 
+o155 1.01914 setco: o185 o126 o132 o134 | setbo: o150 o152 
+o156 1.02094 setco: o189 o132 o133 o183 | setbo: o151 o152 
+o157 8.68411 setco: o114 o120 o125 o130 o131 o138 o145 o158 o159 o160 | setbo: o153 
+o158 8.67391 setco: o186 o125 o131 o157 o159 o160 o182 o184 | setbo: o153 
+o159 8.68411 setco: o211 o215 o221 o224 o138 o145 o147 o157 o158 o160 | setbo: o153 
+o160 8.67391 setco: o186 o192 o194 o221 o224 o225 o157 o158 o159 o182 | setbo: o153 
+o161 2.23523 setco: o125 o129 o131 o134 o153 o182 o184 | setbo: o150 o158 
+o162 12.567 setco: o136 o139 o171 
+o163 32.1659 setco: o204 o211 o214 o216 o219 o146 o173 o177 o178 
+o164 1.96908 setco: o200 | setbo: o162 o171 
+o165 3.90482 setco: o201 o208 o213 o218 o179 o180 | setbo: o170 o171 
+o166 8.67459 setco: o167 o168 o169 o170 o173 o177 o178 | setbo: o163 
+o167 8.69058 setco: o211 o214 o216 o138 o146 o166 o168 o169 o173 o178 | setbo: o163 
+o168 8.67697 setco: o166 o167 o169 | setbo: o163 
+o169 8.6882 setco: o202 o204 o211 o212 o216 o219 o166 o167 o168 | setbo: o163 
+o170 32.2734 setco: o201 o208 o218 o166 | setbo: o163 o168 
+o171 8.64033 setco: o200 o210 o162 o172 o179 o180 
+o172 12.567 setco: o136 o171 
+o173 32.1432 setco: o214 o119 o138 o140 o141 o142 o144 o146 o148 o163 o166 o167 
+o174 5.33189 setco: o143 o144 | setbo: o172 
+o175 8.68071 setco: o137 o140 o141 o144 o148 o176 o177 o178 o179 | setbo: o173 
+o176 8.67697 setco: o114 o119 o138 o141 o142 o146 o148 o175 o177 o178 | setbo: o173 
+o177 8.67697 setco: o163 o166 o175 o176 o178 | setbo: o173 
+o178 8.68411 setco: o211 o214 o138 o146 o163 o166 o167 o175 o176 o177 | setbo: o173 
+o179 31.5752 setco: o165 o171 o175 | setbo: o173 o177 
+o180 1.53975 setco: o143 o144 o165 o171 | setbo: o174 o179 
+o181 12.567 setco: o191 o151 
+o182 32.1489 setco: o192 o194 o195 o225 o131 o153 o158 o160 o161 
+o183 5.33018 setco: o188 o152 o156 | setbo: o181 
+o184 8.68411 setco: o185 o186 o187 o125 o131 o150 o153 o158 o161 | setbo: o182 
+o1 175.86 
+o2 35.1536 setco: o14 o68 | setbo: o1 
+o3 18.7524 setco: o28 o33 o70 o71 o73 
+o4 12.5528 
+o5 32.1432 setco: o93 o105 o13 o16 o19 o22 o24 o30 o34 o36 o90 o92 
+o6 30.8572 setco: o27 o31 o37 o51 o52 o56 
+o7 6.78529 setco: o28 | setbo: o3 o6 
+o8 8.67357 setco: o10 o11 o12 o30 o34 | setbo: o5 
+o9 2.11105 setco: o70 | setbo: o3 o4 
+o10 8.68156 setco: o8 o11 o12 o16 o19 o22 o24 | setbo: o5 
+o11 8.67051 setco: o8 o10 o12 o30 o34 o36 o90 o92 | setbo: o5 
+o12 8.67697 setco: o93 o102 o105 o8 o10 o11 o16 o22 o90 o92 | setbo: o5 
+o13 7.76495 setco: o5 o30 o34 | setbo: o6 o8 
+o14 18.7541 setco: o2 o39 o44 o74 o75 o76 
+o15 12.5528 
+o16 32.1432 setco: o93 o102 o105 o106 o5 o10 o12 o24 o41 o43 o46 o48 
+o17 33.7484 setco: o38 o42 o48 o59 o60 o64 
+o18 6.82119 setco: o39 | setbo: o14 o17 
+o19 8.67697 setco: o5 o10 o21 o22 o23 | setbo: o16 
+o20 2.10733 setco: o76 | setbo: o14 o15 
+o21 8.68411 setco: o19 o22 o23 o41 o43 o46 o48 | setbo: o16 
+o22 8.68071 setco: o93 o102 o105 o5 o10 o12 o19 o21 o23 o90 | setbo: o16 
+o23 8.67697 setco: o102 o105 o106 o19 o21 o22 o41 o46 | setbo: o16 
+o24 7.76495 setco: o5 o10 o16 | setbo: o17 o19 
+o25 2.00534 
+o26 2.00534 
+o27 24.7414 setco: o6 o51 o52 o56 
+o28 16.8949 setco: o3 o7 o29 o49 
+o29 12.5528 setco: o28 
+o30 32.1602 setco: o5 o8 o11 o13 o50 o54 o92 
+o31 6.60737 setco: o6 | setbo: o27 o28 
+o32 8.67357 setco: o34 o35 o36 o50 o54 | setbo: o30 
+o33 1.44131 setco: o3 | setbo: o28 o29 
+o34 8.68718 setco: o5 o8 o11 o13 o32 o35 o36 | setbo: o30 
+o35 8.67357 setco: o32 o34 o36 o50 o52 o54 | setbo: o30 
+o36 8.68718 setco: o5 o11 o32 o34 o35 o90 o92 | setbo: o30 
+o37 7.63622 setco: o6 o50 o54 | setbo: o27 o30 o32 
+o38 27.6496 setco: o17 o59 o60 o64 
+o39 16.8972 setco: o14 o18 o40 o58 
+o40 12.5528 setco: o39 
+o41 32.1659 setco: o106 o16 o21 o23 o57 o59 o62 
+o42 6.61904 setco: o17 | setbo: o38 o39 
+o43 8.67697 setco: o16 o21 o45 o46 o47 | setbo: o41 
+o44 1.43877 setco: o14 | setbo: o39 o40 
+o45 8.6882 setco: o43 o46 o47 o57 o59 o62 | setbo: o41 
+o46 8.67459 setco: o102 o106 o16 o21 o23 o43 o45 o47 | setbo: o41 
+o47 8.69058 setco: o43 o45 o46 o57 o62 | setbo: o41 
+o48 7.63622 setco: o16 o17 o21 | setbo: o38 o41 o43 
+o49 12.5528 setco: o28 
+o50 77.1301 setco: o30 o32 o35 o37 o84 o86 o87 
+o51 7.8288 setco: o6 o27 | setbo: o53 o56 
+o52 8.61307 setco: o6 o27 o35 | setbo: o50 o54 o56 
+o53 14.7767 | setbo: o49 
+o54 14.4848 setco: o30 o32 o35 o37 o87 | setbo: o50 
+o55 20.8694 setco: o84 o86 o87 | setbo: o50 
+o56 20.0003 setco: o6 o27 
+o57 77.1574 setco: o41 o45 o47 o79 o81 o82 
+o58 12.5528 setco: o39 
+o59 7.9566 setco: o17 o38 o41 o45 o62 | setbo: o57 o64 
+o60 7.8288 setco: o17 o38 | setbo: o63 o64 
+o61 20.9016 setco: o79 o81 o82 | setbo: o57 
+o62 14.4559 setco: o41 o45 o47 o59 o82 | setbo: o57 
+o63 14.775 | setbo: o58 
+o64 20.6436 setco: o17 o38 
+o65 2.00534 
+o66 2.00534 
+o67 2.00534 
+o68 2.00534 setco: o2 
+o69 12.5387 
+o70 12.5528 setco: o3 o9 
+o71 12.5528 setco: o3 
+o72 3.61599 | setbo: o70 o71 
+o73 2.00534 setco: o3 
+o74 2.00534 setco: o14 
+o75 12.5528 setco: o14 
+o76 12.5528 setco: o14 o20 
+o77 3.61599 | setbo: o75 o76 
+o78 12.5528 
+o79 382.473 setco: o57 o61 
+o80 12.5528 setco: o103 
+o81 59.4483 setco: o57 o61 | setbo: o79 
+o82 69.1652 setco: o109 o111 o57 o61 o62 | setbo: o79 
+o83 17.9998 | setbo: o79 o80 
+o84 382.533 setco: o50 o55 
+o85 12.5528 setco: o91 
+o86 59.4896 setco: o98 o100 o50 o55 | setbo: o84 
+o87 69.1768 setco: o50 o54 o55 | setbo: o84 
+o88 18.002 | setbo: o84 o85 
+o89 12.5528 setco: o91 
+o90 32.1489 setco: o102 o105 o107 o114 o116 o118 o127 o5 o11 o12 o22 o36 
+o91 11.6127 setco: o113 o135 o85 o89 
+o92 8.67459 setco: o93 o94 o95 o5 o11 o12 o30 o36 | setbo: o90 
+Layer1(1.10079): o186 o189 o193 o198 o203 o204 o208 o222 o226 o234 o235 o238 o243 o255 o259 o268 o271 o275 o278 o280 o285 o286 o291 o293 o297 o299 o301 o303 o306 o308 o310 o314 o318 o320 o322 o325 o327 o329 o331 o332 o335 o336 o337 o338 o339 o342 o343 o344 o345 o346 o347 o348 o349 o93 o96 o97 o100 o110 o111 o120 o127 o133 o139 o140 o147 o148 o154 o155 o161 o164 o167 o180 o2 o7 o9 o13 o18 o20 o21 o24 o25 o26 o31 o33 o36 o37 o42 o44 o47 o51 o52 o55 o59 o60 o61 o65 o66 o67 o69 o72 o77 o78 o83 o88 
+Layer2(1.92118): o187 o190 o196 o199 o200 o205 o209 o215 o231 o239 o246 o253 o258 o265 o269 o283 o289 o302 o304 o307 o309 o315 o316 o321 o323 o324 o328 o330 o333 o334 o340 o341 o101 o107 o109 o112 o116 o122 o126 o131 o135 o141 o143 o149 o156 o160 o162 o165 o169 o178 o6 o8 o14 o23 o28 o35 o45 o48 o53 o63 o64 o68 o73 o81 o85 o86 o87 o89 o92 
+Layer3(1.65932): o188 o194 o206 o213 o214 o223 o224 o230 o232 o236 o240 o245 o249 o260 o266 o270 o276 o281 o298 o300 o305 o326 o95 o98 o106 o121 o128 o134 o142 o152 o157 o170 o174 o179 o184 o3 o12 o17 o19 o34 o39 o43 o49 o54 o74 o75 o76 o82 o91 
+Layer4(4.88447): o185 o195 o207 o210 o217 o218 o219 o220 o225 o237 o244 o248 o250 o256 o267 o273 o279 o290 o294 o311 o94 o108 o119 o123 o130 o144 o146 o151 o159 o168 o177 o11 o22 o46 o50 o62 o70 o71 o79 o80 
+Layer5(1.32007): o191 o197 o216 o227 o229 o241 o247 o251 o254 o257 o262 o263 o264 o277 o287 o295 o313 o317 o103 o105 o117 o118 o129 o136 o137 o145 o158 o166 o171 o176 o183 o10 o32 o41 o56 
+Layer6(2.84736): o201 o202 o221 o228 o242 o261 o272 o274 o282 o288 o292 o296 o319 o99 o104 o113 o115 o124 o125 o132 o138 o163 o172 o175 o181 o182 o16 o27 o29 o30 o38 o40 o57 o90 
+Layer7(4.83534): o192 o211 o212 o233 o252 o284 o312 o102 o114 o150 o153 o173 o1 o4 o5 o15 o58 o84 
+Total layer: 7
+Total required drying time: 18.5685
+
+PHASE 2: MINIMIZE DRYING TIME WITH FIXED LAYER NUMBER
+
+Start building variables (phase 2):
+End building variables (phase 2). 68510 variables.
+Start building constraints (phase 2):
+End building constraints (phase 2). 132750 constraints.
+Gurobi start
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-07-18
+Set parameter TimeLimit to value 1000
+Set parameter MIPGapAbs to value 0
+Set parameter MIPGap to value 0
+Set parameter MIPFocus to value 1
+Gurobi Optimizer version 9.5.0 build v9.5.0rc5 (mac64[arm])
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 132750 rows, 68510 columns and 4468648 nonzeros
+Model fingerprint: 0xd906ded2
+Variable types: 64099 continuous, 4411 integer (4061 binary)
+Coefficient statistics:
+  Matrix range     [7e-09, 1e+06]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+06]
+  RHS range        [1e+00, 1e+06]
+Warning: Model contains large matrix coefficient range
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 9783 rows and 10000 columns (presolve time = 5s) ...
+Presolve removed 64153 rows and 64599 columns (presolve time = 10s) ...
+Presolve removed 64314 rows and 64599 columns (presolve time = 16s) ...
+Presolve removed 64314 rows and 64599 columns (presolve time = 20s) ...
+Presolve removed 64314 rows and 64599 columns (presolve time = 25s) ...
+Presolve removed 64314 rows and 64599 columns (presolve time = 30s) ...
+Presolve removed 64324 rows and 64599 columns (presolve time = 36s) ...
+Presolve removed 64324 rows and 64599 columns
+Presolve time: 39.92s
+Presolved: 68426 rows, 3911 columns, 3410279 nonzeros
+Variable types: 7 continuous, 3904 integer (3554 binary)
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    5.0000000e+00   0.000000e+00   3.199000e+03     44s
+    3770    6.2316596e+00   0.000000e+00   2.529336e+05     45s
+    5368    1.0970276e+01   0.000000e+00   2.516269e+05     50s
+    6408    1.4635983e+01   0.000000e+00   3.823390e+07     56s
+    7248    1.6027107e+01   0.000000e+00   1.550765e+05     60s
+    8272    1.7119581e+01   0.000000e+00   6.550113e+05     66s
+    9242    1.7370363e+01   0.000000e+00   1.169365e+05     70s
+   10202    1.7498540e+01   0.000000e+00   1.069922e+03     75s
+   10554    1.7154200e+01   0.000000e+00   0.000000e+00     77s
+   10554    1.7154200e+01   0.000000e+00   0.000000e+00     77s
+
+Root relaxation: objective 1.715420e+01, 10554 iterations, 35.36 seconds (69.08 work units)
+Total elapsed time = 80.50s
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   17.15420    0  562          -   17.15420      -     -   90s
+     0     0   18.15420    0  900          -   18.15420      -     -  102s
+     0     0   18.15420    0  753          -   18.15420      -     -  105s
+     0     0   18.15420    0  833          -   18.15420      -     -  114s
+     0     0   18.15420    0  658          -   18.15420      -     -  117s
+     0     0   18.15420    0  363          -   18.15420      -     -  127s
+     0     0   18.15420    0  311          -   18.15420      -     -  178s
+     0     0   18.15420    0  760          -   18.15420      -     -  192s
+     0     0   18.15420    0  493          -   18.15420      -     -  207s
+     0     0   18.15420    0  224          -   18.15420      -     -  227s
+     0     0   18.15420    0  257          -   18.15420      -     -  235s
+     0     0   18.16484    0  298          -   18.16484      -     -  249s
+     0     0   18.16484    0  449          -   18.16484      -     -  256s
+     0     0   19.15420    0  443          -   19.15420      -     -  267s
+     0     0   19.15420    0  310          -   19.15420      -     -  271s
+H    0     0                      66.2707920   19.15420  71.1%     -  277s
+     0     0   19.15420    0  183   66.27079   19.15420  71.1%     -  288s
+H    0     0                      24.8670455   19.15420  23.0%     -  310s
+H    0     0                      24.7525390   19.15420  22.6%     -  312s
+H    0     2                      24.7428759   19.15420  22.6%     -  321s
+     0     2   19.15420    0  117   24.74288   19.15420  22.6%     -  321s
+H    1     4                      21.4363944   19.15420  10.6%   378  325s
+H    4     8                      21.4155455   19.15420  10.6%   417  328s
+H    7    16                      21.4033476   19.15420  10.5%   435  333s
+H    8    16                      21.3701823   19.15420  10.4%   448  333s
+H    9    16                      21.3235559   19.15420  10.2%   461  333s
+H   11    16                      21.3060979   19.15420  10.1%   493  333s
+H   12    16                      21.3020892   19.15420  10.1%   499  333s
+    15    24   19.15420    4  240   21.30209   19.15420  10.1%   566  335s
+    31    40   19.15420    6  185   21.30209   19.15420  10.1%   540  341s
+H   32    40                      21.2982144   19.15420  10.1%   523  341s
+H   32    40                      21.2446092   19.15420  9.84%   523  341s
+H   55    62                      21.2406295   19.15420  9.82%   424  346s
+H   57    62                      21.2156685   19.15420  9.72%   430  346s
+    72    78 infeasible   10        21.21567   19.15420  9.72%   407  355s
+H   74    78                      21.2016023   19.15420  9.66%   396  355s
+H   84    78                      21.1982764   19.15420  9.64%   384  355s
+H   86    78                      21.1946517   19.15420  9.63%   379  355s
+    89   109   19.15420   10  244   21.19465   19.15420  9.63%   380  368s
+H  138   180                      21.1937751   19.15420  9.62%   333  386s
+H  151   180                      21.1921867   19.15420  9.62%   322  386s
+H  233   180                      21.1901810   19.15420  9.61%   284  386s
+H  247   259                      21.1804953   19.15420  9.57%   280  421s
+H  325   259                      21.1787508   19.15420  9.56%   269  421s
+H  341   259                      21.1777709   19.15420  9.56%   264  421s
+H  390   259                      21.1745048   19.15420  9.54%   256  421s
+   411   351   19.15420   29  233   21.17450   19.15420  9.54%   256  480s
+H  416   351                      21.1671690   19.15420  9.51%   256  480s
+H  422   351                      21.1654802   19.15420  9.50%   256  480s
+H  444   351                      21.1614846   19.15420  9.49%   252  480s
+H  528   351                      21.1581988   19.15420  9.47%   241  480s
+   550   463   19.15420   32  283   21.15820   19.15420  9.47%   241  626s
+H  551   463                      21.1571455   19.15420  9.47%   241  626s
+H  560   463                      21.1555036   19.15420  9.46%   242  626s
+H  747   463                      21.1544616   19.15420  9.46%   226  626s
+H  759   777                      21.1542167   19.15420  9.45%   228  769s
+H  851   777                      21.1540907   19.15420  9.45%   227  769s
+  1356   777 infeasible   54        21.15409   19.15420  9.45%   204  770s
+H 1677   874                      21.1540860   19.15420  9.45%   203  935s
+H 1697   874                      21.1540337   19.15420  9.45%   203  935s
+  1904   953 infeasible   71        21.15403   19.15420  9.45%   204 1000s
+H 1943   953                      21.1540290   19.15420  9.45%   206 1000s
+H 2047   953                      21.1535585   19.15420  9.45%   210 1000s
+
+Cutting planes:
+  Learned: 63
+  Gomory: 105
+  Cover: 718
+  Implied bound: 129
+  Clique: 463
+  MIR: 1054
+  StrongCG: 24
+  GUB cover: 281
+  Zero half: 111
+  RLT: 4
+  Relax-and-lift: 211
+
+Explored 2112 nodes (522559 simplex iterations) in 1000.86 seconds (2186.55 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 10: 21.1536 21.154 21.154 ... 21.1582
+
+Time limit reached
+Best objective 2.115355853680e+01, best bound 1.915420015790e+01, gap 9.4516%
+Gurobi end
+o185 8.67799 setco: o186 o187 o152 o155 o184 | setbo: o182 
+o186 8.67799 setco: o185 o187 o192 o194 o221 o225 o153 o158 o160 o184 | setbo: o182 
+o187 8.68751 setco: o185 o186 o188 o192 o194 o195 o184 | setbo: o182 
+o188 31.6305 setco: o187 o191 o198 o183 | setbo: o185 o182 
+o189 0.898695 setco: o191 o152 o156 | setbo: o188 o183 
+o190 12.567 setco: o191 o151 o154 
+o191 9.02487 setco: o188 o189 o190 o220 o231 o181 
+o192 32.1716 setco: o186 o187 o221 o222 o225 o227 o230 o237 o160 o182 
+o193 1.77339 setco: o231 | setbo: o190 o191 
+o194 8.67799 setco: o186 o187 o195 o196 o197 o221 o225 o153 o160 o182 | setbo: o192 
+o195 8.6916 setco: o187 o194 o196 o197 o182 | setbo: o192 
+o196 8.67799 setco: o194 o195 o197 o221 o222 o225 o227 o230 o233 o237 | setbo: o192 
+o197 8.6916 setco: o194 o195 o196 o199 o222 o228 o230 | setbo: o192 
+o198 3.06308 setco: o188 o223 o229 | setbo: o191 o199 
+o199 32.5006 setco: o197 o223 o229 o232 | setbo: o192 o195 
+o200 12.5387 setco: o201 o164 o171 
+o201 7.79532 setco: o200 o210 o218 o241 o251 o165 o170 
+o202 32.1489 setco: o211 o212 o216 o217 o219 o226 o233 o236 o238 o246 o252 o256 o257 o258 o266 o169 
+o203 1.77562 setco: o241 | setbo: o200 o201 
+o204 8.67459 setco: o205 o206 o207 o209 o211 o212 o216 o217 o219 o163 o169 | setbo: o202 
+o205 8.67136 setco: o204 o206 o207 o211 o217 o221 o226 o233 o236 o238 | setbo: o202 
+o206 8.68751 setco: o204 o205 o207 o212 o219 o242 o246 o252 o255 o256 o257 o261 | setbo: o202 
+o207 8.67799 setco: o204 o205 o206 o233 o238 o252 o257 o258 o264 o266 | setbo: o202 
+o208 3.86567 setco: o212 o218 o244 o249 o253 o254 o261 o165 o170 | setbo: o201 o209 
+o209 37.739 setco: o204 o212 o218 o219 o244 o249 o254 o255 o261 | setbo: o202 o206 
+o210 12.5387 setco: o201 o171 
+o211 32.1489 setco: o202 o204 o205 o219 o221 o224 o226 o236 o138 o146 o147 o159 o163 o167 o169 o178 
+o212 36.6469 setco: o202 o204 o206 o208 o209 o253 o254 o169 
+o213 4.03856 setco: o165 | setbo: o210 o218 
+o214 8.67459 setco: o215 o216 o217 o138 o146 o147 o163 o167 o173 o178 | setbo: o211 
+o215 8.68496 setco: o214 o216 o217 o221 o224 o226 o138 o147 o153 o159 | setbo: o211 
+o216 8.67391 setco: o202 o204 o214 o215 o217 o163 o167 o169 | setbo: o211 
+o217 8.67799 setco: o202 o204 o205 o214 o215 o216 o221 o226 o233 o236 | setbo: o211 
+o218 4.6765 setco: o201 o208 o209 o253 o254 o165 o170 | setbo: o212 
+o219 2.22902 setco: o202 o204 o206 o209 o211 o163 o169 | setbo: o212 o216 
+o220 12.5387 setco: o191 o232 
+o221 32.1489 setco: o186 o192 o194 o196 o205 o211 o215 o217 o230 o233 o236 o237 o147 o153 o159 o160 
+o222 1.21125 setco: o192 o196 o197 o237 o240 | setbo: o228 o230 
+o223 4.03856 setco: o198 o199 | setbo: o220 o229 
+o224 8.67799 setco: o211 o215 o225 o226 o227 o138 o147 o153 o159 o160 | setbo: o221 
+o225 8.68751 setco: o186 o192 o194 o196 o224 o226 o227 o153 o160 o182 | setbo: o221 
+o226 8.68411 setco: o202 o205 o211 o215 o217 o224 o225 o227 o233 o236 | setbo: o221 
+o227 8.67799 setco: o192 o196 o224 o225 o226 o233 o236 o237 | setbo: o221 
+o228 35.1837 setco: o197 o230 o234 o237 o240 o265 
+o229 4.34767 setco: o198 o199 o232 o234 o240 o265 | setbo: o228 
+o230 2.23364 setco: o192 o196 o197 o221 o228 o233 o237 | setbo: o227 
+o231 12.5387 setco: o191 o193 o232 
+o232 7.7976 setco: o199 o220 o229 o231 o262 o272 
+o233 32.1489 setco: o196 o202 o205 o207 o217 o221 o226 o227 o230 o258 o263 o264 o266 o267 o271 o276 
+o234 3.42298 setco: o228 o229 o263 o265 o270 o273 | setbo: o232 o240 
+o235 1.77249 setco: o272 | setbo: o231 o232 
+o236 8.67799 setco: o202 o205 o211 o217 o221 o226 o227 o237 o238 o239 | setbo: o233 
+o237 8.67391 setco: o192 o196 o221 o222 o227 o228 o230 o236 o238 o239 o263 o271 | setbo: o233 
+o238 8.69773 setco: o202 o205 o207 o236 o237 o239 o252 o258 o264 o266 | setbo: o233 
+o239 8.67799 setco: o236 o237 o238 o240 o263 o264 o266 o267 o271 o274 o276 | setbo: o233 
+o240 37.4776 setco: o222 o228 o229 o239 o263 o265 o271 | setbo: o233 o237 
+o241 12.5528 setco: o201 o203 o244 
+o242 32.1432 setco: o206 o252 o255 o256 o257 o259 o284 o286 o287 
+o243 1.96817 | setbo: o241 o244 
+o244 6.26551 setco: o208 o209 o241 o251 o254 o261 o282 
+o245 8.67051 setco: o246 o247 o248 o250 o255 o256 o261 | setbo: o242 
+o246 8.67697 setco: o202 o206 o245 o247 o248 o252 o255 o256 o257 o259 | setbo: o242 
+o247 8.67697 setco: o245 o246 o248 o284 o286 | setbo: o242 
+o248 8.68411 setco: o245 o246 o247 o252 o259 o284 o286 o287 | setbo: o242 
+o249 4.02698 setco: o208 o209 o254 o261 o282 o283 o285 | setbo: o244 o250 
+o250 35.0906 setco: o245 o283 | setbo: o242 o247 
+o251 12.5528 setco: o201 o244 
+o252 32.1262 setco: o202 o206 o207 o238 o242 o246 o248 o256 o264 o266 o268 o287 
+o253 2.72767 setco: o208 o212 o218 | setbo: o251 o254 
+o254 2.93607 setco: o208 o209 o212 o218 o244 o249 | setbo: o261 
+o255 1.0102 setco: o206 o209 o242 o245 o246 | setbo: o256 o261 
+o256 2.42789 setco: o202 o206 o242 o245 o246 o252 o261 | setbo: o257 
+o257 8.67051 setco: o202 o206 o207 o242 o246 o258 o259 o260 | setbo: o252 
+o258 8.67136 setco: o202 o207 o233 o238 o257 o259 o260 o264 o266 o268 | setbo: o252 
+o259 8.67391 setco: o242 o246 o248 o257 o258 o260 o284 o287 | setbo: o252 
+o260 8.67391 setco: o257 o258 o259 o264 o268 | setbo: o252 
+o261 36.2748 setco: o206 o208 o209 o244 o245 o249 o256 
+o262 12.5528 setco: o232 o273 
+o263 38.1324 setco: o233 o234 o237 o239 o240 o273 o280 
+o264 32.1262 setco: o207 o233 o238 o239 o252 o258 o260 o271 o274 o276 o278 
+o265 2.29748 setco: o228 o229 o234 o240 o273 o280 | setbo: o263 o270 
+o266 8.67391 setco: o202 o207 o233 o238 o239 o252 o258 o267 o268 o269 | setbo: o264 
+o267 8.67391 setco: o233 o239 o266 o268 o269 o274 o276 o278 | setbo: o264 
+o268 8.68411 setco: o252 o258 o260 o266 o267 o269 | setbo: o264 
+o269 8.67391 setco: o266 o267 o268 o274 o278 | setbo: o264 
+o270 2.53342 setco: o234 | setbo: o262 
+o271 2.55513 setco: o233 o237 o239 o240 o264 o274 o276 | setbo: o263 o267 
+o272 12.5528 setco: o232 o235 o273 
+o273 6.45806 setco: o234 o262 o263 o265 o272 
+o274 32.1489 setco: o239 o264 o267 o269 o271 
+o275 1.77249 | setbo: o272 o273 
+o276 8.67391 setco: o233 o239 o264 o267 o271 o277 o278 o279 | setbo: o274 
+o277 8.67799 setco: o276 o278 o279 | setbo: o274 
+o278 8.67799 setco: o264 o267 o269 o276 o277 o279 | setbo: o274 
+o279 8.68751 setco: o276 o277 o278 o281 | setbo: o274 
+o280 3.38513 setco: o263 o265 | setbo: o273 o281 
+o281 34.7828 setco: o279 | setbo: o274 o277 
+o282 12.5528 setco: o244 o249 o283 
+o283 6.58911 setco: o249 o250 o282 | setbo: o290 
+o284 32.1432 setco: o242 o247 o248 o259 
+o285 1.25086 setco: o249 | setbo: o282 o283 
+o286 8.67816 setco: o242 o247 o248 o287 o288 o289 o290 | setbo: o284 
+o287 8.67697 setco: o242 o248 o252 o259 o286 o288 o289 | setbo: o284 
+o288 8.67357 setco: o286 o287 o289 | setbo: o284 
+o289 8.68411 setco: o286 o287 o288 o311 | setbo: o284 
+o290 35.2343 setco: o286 | setbo: o284 o288 
+o291 0.844472 setco: o292 
+o292 0.844472 setco: o291 o293 
+o293 0.844472 setco: o292 o294 
+o294 0.844472 setco: o293 o295 
+o295 0.842208 setco: o294 o296 
+o296 0.842208 setco: o295 o297 
+o297 0.844472 setco: o296 o298 
+o298 0.844472 setco: o297 o299 o311 
+o299 0.844472 setco: o298 o300 o311 
+o300 0.844472 setco: o299 o311 
+o301 0.844472 setco: o302 
+o302 0.844472 setco: o301 o303 
+o303 0.846736 setco: o302 o304 
+o304 0.844472 setco: o303 o305 
+o305 0.844472 setco: o304 o306 
+o306 0.844472 setco: o305 o307 
+o307 0.844472 setco: o306 o308 
+o308 0.844472 setco: o307 o309 
+o309 0.842208 setco: o308 o310 
+o310 0.842208 setco: o309 
+o311 24.5061 setco: o289 o298 o299 o300 | setbo: o313 
+o312 12.5528 
+o313 40.4399 | setbo: o312 
+o314 14.1585 | setbo: o317 
+o315 6.33637 | setbo: o317 
+o316 12.5528 
+o317 28.5342 setco: o319 o328 o329 
+o318 4.30024 | setbo: o315 o316 
+o319 8.34171 setco: o317 
+o320 8.34171 
+o321 12.5528 
+o322 25.5548 | setbo: o321 
+o323 12.9652 | setbo: o326 
+o324 12.5528 
+o325 8.67225 | setbo: o323 
+o326 28.2559 
+o327 3.98658 | setbo: o324 o326 
+o328 4.01776 setco: o317 
+o329 3.82487 setco: o317 | setbo: o328 
+o330 4.01776 
+o331 3.81812 | setbo: o330 
+o332 12.5387 
+o333 12.5528 
+o334 12.5528 
+o335 3.60961 | setbo: o333 o334 
+o336 12.5528 
+o337 2.00534 
+o338 2.00534 
+o339 12.5528 
+o340 12.5528 
+o341 12.5528 
+o342 3.60961 | setbo: o340 o341 
+o343 12.5528 
+o344 2.00534 
+o345 2.00534 
+o346 2.00534 
+o347 2.00534 
+o348 2.00534 
+o349 2.00534 
+o93 8.66796 setco: o94 o95 o102 o105 o107 o5 o12 o16 o22 o92 | setbo: o90 
+o94 8.68751 setco: o93 o95 o114 o116 o92 | setbo: o90 
+o95 8.67544 setco: o93 o94 o102 o107 o114 o116 o118 o125 o127 o92 | setbo: o90 
+o96 2.41871 setco: o117 o123 | setbo: o99 o91 
+o97 1.77584 setco: o135 | setbo: o89 o91 
+o98 7.121 setco: o114 o116 o86 | setbo: o94 o90 
+o99 26.8882 setco: o117 o121 o123 
+o100 1.81946 setco: o86 | setbo: o98 o99 
+o101 12.5528 setco: o103 
+o102 32.1489 setco: o93 o95 o118 o125 o127 o129 o12 o16 o22 o23 o46 o90 
+o103 11.6122 setco: o101 o124 o149 o80 
+o104 26.9212 setco: o126 o128 o133 o134 
+o105 8.67799 setco: o93 o106 o107 o108 o5 o12 o16 o22 o23 o90 | setbo: o102 
+o106 8.67051 setco: o105 o107 o108 o16 o23 o41 o46 | setbo: o102 
+o107 8.69773 setco: o93 o95 o105 o106 o108 o114 o118 o125 o127 o90 | setbo: o102 
+o108 8.67544 setco: o105 o106 o107 o109 o125 o127 o129 | setbo: o102 
+o109 7.26748 setco: o108 o82 | setbo: o102 o106 
+o110 1.77271 setco: o149 | setbo: o101 o103 
+o111 2.94501 setco: o126 o82 | setbo: o104 o109 
+o112 1.58061 setco: o128 o133 | setbo: o103 o104 
+o113 12.5528 setco: o136 o91 
+o114 32.1262 setco: o94 o95 o98 o107 o125 o127 o130 o138 o141 o142 o145 o157 o176 o90 
+o115 28.6091 setco: o121 o136 o137 o140 o143 
+o116 8.67051 setco: o94 o95 o98 o118 o119 o120 o121 o90 | setbo: o114 
+o117 6.58865 setco: o96 o99 | setbo: o113 
+o118 8.67136 setco: o95 o102 o107 o116 o119 o120 o125 o127 o130 o90 | setbo: o114 
+o119 8.67391 setco: o116 o118 o120 o137 o138 o141 o142 o148 o173 o176 | setbo: o114 
+o120 8.68156 setco: o116 o118 o119 o125 o130 o138 o142 o145 o153 o157 | setbo: o114 
+o121 6.27062 setco: o99 o115 o116 o137 o140 o148 | setbo: o114 o119 
+o122 0.497146 setco: o137 o140 | setbo: o115 o121 
+o123 1.94115 setco: o96 o99 o136 o143 | setbo: o115 o117 
+o124 12.5528 setco: o103 o151 
+o125 32.1262 setco: o95 o102 o107 o108 o114 o118 o120 o145 o150 o153 o157 o158 o161 o184 
+o126 0.890189 setco: o104 o111 o150 o155 | setbo: o132 o134 
+o127 8.67391 setco: o95 o102 o107 o108 o114 o118 o129 o130 o131 o90 | setbo: o125 
+o128 6.58922 setco: o104 o112 o132 | setbo: o124 
+o129 8.67391 setco: o102 o108 o127 o130 o131 o150 o161 | setbo: o125 
+o130 8.68411 setco: o114 o118 o120 o127 o129 o131 o138 o145 o153 o157 | setbo: o125 
+o131 8.68156 setco: o127 o129 o130 o134 o150 o153 o157 o158 o161 o182 o184 | setbo: o125 
+o132 28.0939 setco: o128 o134 o150 o151 o155 o156 
+o133 1.30217 setco: o104 o112 o151 o156 | setbo: o128 o132 
+o134 6.36428 setco: o104 o131 o132 o150 o155 o161 | setbo: o125 o129 
+o135 12.5528 setco: o97 o136 o91 
+o136 10.3256 setco: o113 o115 o123 o135 o162 o172 
+o137 3.71583 setco: o115 o119 o121 o122 o141 o144 o175 
+o138 32.1262 setco: o211 o214 o215 o224 o114 o119 o120 o130 o141 o153 o157 o159 o167 o173 o176 o178 
+o139 1.77584 setco: o162 | setbo: o135 o136 
+o140 1.54128 setco: o115 o121 o122 o173 o175 | setbo: o137 o144 
+o141 2.44074 setco: o114 o119 o137 o138 o173 o175 o176 | setbo: o142 
+o142 8.68071 setco: o114 o119 o120 o145 o146 o147 o173 o176 | setbo: o138 
+o143 1.66019 setco: o115 o123 o174 o180 | setbo: o136 o144 
+o144 29.8905 setco: o137 o173 o174 o175 o180 
+o145 8.67136 setco: o114 o120 o125 o130 o142 o146 o147 o153 o157 o159 | setbo: o138 
+o146 8.67391 setco: o211 o214 o142 o145 o147 o163 o167 o173 o176 o178 | setbo: o138 
+o147 8.67391 setco: o211 o214 o215 o221 o224 o142 o145 o146 o153 o159 | setbo: o138 
+o148 0.817304 setco: o119 o121 o173 o175 o176 | setbo: o137 o141 
+o149 12.5528 setco: o103 o110 o151 
+o150 5.38423 setco: o125 o126 o129 o131 o132 o134 o152 o184 
+o151 10.3279 setco: o190 o124 o132 o133 o149 o152 o181 
+o152 29.6524 setco: o185 o189 o150 o151 o183 
+o153 32.1262 setco: o186 o194 o215 o221 o224 o225 o120 o125 o130 o131 o138 o145 o147 o161 o182 o184 
+o154 1.77271 setco: o190 | setbo: o149 o151 
+o155 1.01914 setco: o185 o126 o132 o134 | setbo: o150 o152 
+o156 1.02094 setco: o189 o132 o133 o183 | setbo: o151 o152 
+o157 8.68411 setco: o114 o120 o125 o130 o131 o138 o145 o158 o159 o160 | setbo: o153 
+o158 8.67391 setco: o186 o125 o131 o157 o159 o160 o182 o184 | setbo: o153 
+o159 8.68411 setco: o211 o215 o221 o224 o138 o145 o147 o157 o158 o160 | setbo: o153 
+o160 8.67391 setco: o186 o192 o194 o221 o224 o225 o157 o158 o159 o182 | setbo: o153 
+o161 2.23523 setco: o125 o129 o131 o134 o153 o182 o184 | setbo: o150 o158 
+o162 12.567 setco: o136 o139 o171 
+o163 32.1659 setco: o204 o211 o214 o216 o219 o146 o173 o177 o178 
+o164 1.96908 setco: o200 | setbo: o162 o171 
+o165 3.90482 setco: o201 o208 o213 o218 o179 o180 | setbo: o170 o171 
+o166 8.67459 setco: o167 o168 o169 o170 o173 o177 o178 | setbo: o163 
+o167 8.69058 setco: o211 o214 o216 o138 o146 o166 o168 o169 o173 o178 | setbo: o163 
+o168 8.67697 setco: o166 o167 o169 | setbo: o163 
+o169 8.6882 setco: o202 o204 o211 o212 o216 o219 o166 o167 o168 | setbo: o163 
+o170 32.2734 setco: o201 o208 o218 o166 | setbo: o163 o168 
+o171 8.64033 setco: o200 o210 o162 o172 o179 o180 
+o172 12.567 setco: o136 o171 
+o173 32.1432 setco: o214 o119 o138 o140 o141 o142 o144 o146 o148 o163 o166 o167 
+o174 5.33189 setco: o143 o144 | setbo: o172 
+o175 8.68071 setco: o137 o140 o141 o144 o148 o176 o177 o178 o179 | setbo: o173 
+o176 8.67697 setco: o114 o119 o138 o141 o142 o146 o148 o175 o177 o178 | setbo: o173 
+o177 8.67697 setco: o163 o166 o175 o176 o178 | setbo: o173 
+o178 8.68411 setco: o211 o214 o138 o146 o163 o166 o167 o175 o176 o177 | setbo: o173 
+o179 31.5752 setco: o165 o171 o175 | setbo: o173 o177 
+o180 1.53975 setco: o143 o144 o165 o171 | setbo: o174 o179 
+o181 12.567 setco: o191 o151 
+o182 32.1489 setco: o192 o194 o195 o225 o131 o153 o158 o160 o161 
+o183 5.33018 setco: o188 o152 o156 | setbo: o181 
+o184 8.68411 setco: o185 o186 o187 o125 o131 o150 o153 o158 o161 | setbo: o182 
+o1 175.86 
+o2 35.1536 setco: o14 o68 | setbo: o1 
+o3 18.7524 setco: o28 o33 o70 o71 o73 
+o4 12.5528 
+o5 32.1432 setco: o93 o105 o13 o16 o19 o22 o24 o30 o34 o36 o90 o92 
+o6 30.8572 setco: o27 o31 o37 o51 o52 o56 
+o7 6.78529 setco: o28 | setbo: o3 o6 
+o8 8.67357 setco: o10 o11 o12 o30 o34 | setbo: o5 
+o9 2.11105 setco: o70 | setbo: o3 o4 
+o10 8.68156 setco: o8 o11 o12 o16 o19 o22 o24 | setbo: o5 
+o11 8.67051 setco: o8 o10 o12 o30 o34 o36 o90 o92 | setbo: o5 
+o12 8.67697 setco: o93 o102 o105 o8 o10 o11 o16 o22 o90 o92 | setbo: o5 
+o13 7.76495 setco: o5 o30 o34 | setbo: o6 o8 
+o14 18.7541 setco: o2 o39 o44 o74 o75 o76 
+o15 12.5528 
+o16 32.1432 setco: o93 o102 o105 o106 o5 o10 o12 o24 o41 o43 o46 o48 
+o17 33.7484 setco: o38 o42 o48 o59 o60 o64 
+o18 6.82119 setco: o39 | setbo: o14 o17 
+o19 8.67697 setco: o5 o10 o21 o22 o23 | setbo: o16 
+o20 2.10733 setco: o76 | setbo: o14 o15 
+o21 8.68411 setco: o19 o22 o23 o41 o43 o46 o48 | setbo: o16 
+o22 8.68071 setco: o93 o102 o105 o5 o10 o12 o19 o21 o23 o90 | setbo: o16 
+o23 8.67697 setco: o102 o105 o106 o19 o21 o22 o41 o46 | setbo: o16 
+o24 7.76495 setco: o5 o10 o16 | setbo: o17 o19 
+o25 2.00534 
+o26 2.00534 
+o27 24.7414 setco: o6 o51 o52 o56 
+o28 16.8949 setco: o3 o7 o29 o49 
+o29 12.5528 setco: o28 
+o30 32.1602 setco: o5 o8 o11 o13 o50 o54 o92 
+o31 6.60737 setco: o6 | setbo: o27 o28 
+o32 8.67357 setco: o34 o35 o36 o50 o54 | setbo: o30 
+o33 1.44131 setco: o3 | setbo: o28 o29 
+o34 8.68718 setco: o5 o8 o11 o13 o32 o35 o36 | setbo: o30 
+o35 8.67357 setco: o32 o34 o36 o50 o52 o54 | setbo: o30 
+o36 8.68718 setco: o5 o11 o32 o34 o35 o90 o92 | setbo: o30 
+o37 7.63622 setco: o6 o50 o54 | setbo: o27 o30 o32 
+o38 27.6496 setco: o17 o59 o60 o64 
+o39 16.8972 setco: o14 o18 o40 o58 
+o40 12.5528 setco: o39 
+o41 32.1659 setco: o106 o16 o21 o23 o57 o59 o62 
+o42 6.61904 setco: o17 | setbo: o38 o39 
+o43 8.67697 setco: o16 o21 o45 o46 o47 | setbo: o41 
+o44 1.43877 setco: o14 | setbo: o39 o40 
+o45 8.6882 setco: o43 o46 o47 o57 o59 o62 | setbo: o41 
+o46 8.67459 setco: o102 o106 o16 o21 o23 o43 o45 o47 | setbo: o41 
+o47 8.69058 setco: o43 o45 o46 o57 o62 | setbo: o41 
+o48 7.63622 setco: o16 o17 o21 | setbo: o38 o41 o43 
+o49 12.5528 setco: o28 
+o50 77.1301 setco: o30 o32 o35 o37 o84 o86 o87 
+o51 7.8288 setco: o6 o27 | setbo: o53 o56 
+o52 8.61307 setco: o6 o27 o35 | setbo: o50 o54 o56 
+o53 14.7767 | setbo: o49 
+o54 14.4848 setco: o30 o32 o35 o37 o87 | setbo: o50 
+o55 20.8694 setco: o84 o86 o87 | setbo: o50 
+o56 20.0003 setco: o6 o27 
+o57 77.1574 setco: o41 o45 o47 o79 o81 o82 
+o58 12.5528 setco: o39 
+o59 7.9566 setco: o17 o38 o41 o45 o62 | setbo: o57 o64 
+o60 7.8288 setco: o17 o38 | setbo: o63 o64 
+o61 20.9016 setco: o79 o81 o82 | setbo: o57 
+o62 14.4559 setco: o41 o45 o47 o59 o82 | setbo: o57 
+o63 14.775 | setbo: o58 
+o64 20.6436 setco: o17 o38 
+o65 2.00534 
+o66 2.00534 
+o67 2.00534 
+o68 2.00534 setco: o2 
+o69 12.5387 
+o70 12.5528 setco: o3 o9 
+o71 12.5528 setco: o3 
+o72 3.61599 | setbo: o70 o71 
+o73 2.00534 setco: o3 
+o74 2.00534 setco: o14 
+o75 12.5528 setco: o14 
+o76 12.5528 setco: o14 o20 
+o77 3.61599 | setbo: o75 o76 
+o78 12.5528 
+o79 382.473 setco: o57 o61 
+o80 12.5528 setco: o103 
+o81 59.4483 setco: o57 o61 | setbo: o79 
+o82 69.1652 setco: o109 o111 o57 o61 o62 | setbo: o79 
+o83 17.9998 | setbo: o79 o80 
+o84 382.533 setco: o50 o55 
+o85 12.5528 setco: o91 
+o86 59.4896 setco: o98 o100 o50 o55 | setbo: o84 
+o87 69.1768 setco: o50 o54 o55 | setbo: o84 
+o88 18.002 | setbo: o84 o85 
+o89 12.5528 setco: o91 
+o90 32.1489 setco: o102 o105 o107 o114 o116 o118 o127 o5 o11 o12 o22 o36 
+o91 11.6127 setco: o113 o135 o85 o89 
+o92 8.67459 setco: o93 o94 o95 o5 o11 o12 o30 o36 | setbo: o90 
+Layer1(1.06519): o186 o189 o193 o196 o198 o203 o204 o224 o234 o235 o236 o243 o248 o249 o253 o255 o258 o271 o275 o279 o280 o292 o296 o298 o301 o303 o305 o307 o310 o314 o318 o320 o322 o325 o327 o329 o331 o332 o335 o336 o337 o338 o339 o342 o343 o344 o345 o346 o347 o348 o349 o95 o96 o97 o100 o108 o110 o111 o122 o133 o139 o143 o145 o148 o154 o155 o161 o164 o165 o178 o2 o7 o9 o12 o18 o20 o24 o26 o31 o33 o36 o37 o42 o44 o46 o48 o51 o52 o55 o59 o60 o65 o69 o72 o77 o78 o83 
+Layer2(1.38472): o188 o190 o194 o200 o207 o208 o213 o214 o222 o223 o226 o231 o239 o241 o250 o251 o256 o259 o265 o268 o272 o278 o281 o285 o293 o295 o309 o311 o315 o316 o319 o321 o323 o324 o328 o330 o334 o340 o341 o98 o105 o112 o120 o121 o123 o126 o127 o149 o156 o159 o162 o169 o176 o180 o184 o4 o11 o13 o15 o19 o32 o39 o43 o53 o61 o62 o68 o70 o71 o74 o76 o80 o87 o88 
+Layer3(1.44609): o187 o199 o205 o209 o215 o225 o230 o240 o245 o257 o267 o270 o273 o283 o286 o291 o294 o302 o308 o313 o333 o93 o116 o117 o128 o130 o134 o136 o141 o146 o151 o158 o166 o179 o183 o23 o27 o35 o38 o57 o67 o86 o91 
+Layer4(1.20875): o217 o219 o220 o227 o238 o246 o260 o269 o277 o289 o297 o312 o317 o326 o94 o103 o107 o109 o113 o119 o131 o135 o140 o147 o160 o167 o170 o171 o174 o181 o10 o14 o21 o25 o34 o47 o54 o56 o81 
+Layer5(1.66544): o185 o191 o195 o206 o216 o218 o221 o229 o244 o247 o263 o266 o276 o287 o290 o300 o304 o306 o99 o101 o106 o118 o124 o129 o142 o144 o157 o168 o172 o177 o8 o17 o22 o28 o50 o63 o82 o89 o92 
+Layer6(2.50161): o197 o202 o210 o232 o237 o242 o254 o264 o282 o288 o104 o115 o125 o132 o138 o152 o163 o175 o182 o1 o3 o6 o16 o29 o30 o45 o58 o64 o66 o85 o90 
+Layer7(4.88176): o192 o201 o211 o212 o228 o233 o252 o261 o262 o274 o284 o299 o102 o114 o137 o150 o153 o173 o5 o40 o41 o49 o73 o75 o79 o84 
+Total layer: 7
+Total required drying time: 14.1536
+
+real    21m28.263s
+user    47m54.887s
+sys     1m18.550s
+cmd_option.sh: line 79: example:: command not found
+lianmeng@diedies-MacBook-Pro Prog % 
