@@ -1,27 +1,21 @@
 package processor;
 
 import org.apache.commons.math3.special.Erf;
-import parser.DocParser;
-import parser.InputDocHM;
-import parser.OutputDoc;
-import parser.Solution;
+import parser.*;
 import shape.*;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Map;
 
-public class Processor {
+public class ProcessorOldSim {
     private DocParser parser;
 
-    public Processor() {
+    public ProcessorOldSim() {
         this.parser = new DocParser();
     }
-
     public OutputDoc process(String inputPath) {
         parser.parseInputToDoc(inputPath);
-        InputDocHM input = parser.getParser();
+        InputDoc input = parser.getParser();
 
         /*
         Process mapNameToPoly
@@ -56,7 +50,7 @@ public class Processor {
         /*
         Update polygons in each layer in each solution
          */
-        double sigma = 0.4;
+        double sigma = 0.5;
         input.setSigma(sigma);
         double cons_coefficient = Math.sqrt(Math.PI) * sigma / Math.sqrt(8);
         double coefficient = 1.0/(Math.sqrt(2) * sigma);
@@ -89,7 +83,7 @@ public class Processor {
                 int layerPrintScore = 0;
                 for (RowTile rowTile : input.getAllRowTiles()) {
                     for (Polygon poly : layer.getLayerPolys()) {
-                        if (rowTile.getIsRelateToPolyForDs().get(poly)) {
+                        if (rowTile.getIsRelateToPolygon().get(poly)) {
                             layerPrintScore = layerPrintScore + 1;
                             layer.addToPrintRowTiles(rowTile);
                             break;
@@ -194,6 +188,8 @@ public class Processor {
 
 
 
+
+
     private void identifySubPolygons(ArrayList<Polygon> polygons, ArrayList<Rectangle> subRects) {
         for (Rectangle sub : subRects) {
             ArrayList<Pair> subVertices = sub.vertices;
@@ -232,7 +228,7 @@ public class Processor {
         }
     }
 
-    private void tileGenerator(double rowCnt, double chipMinx, double chipMiny, double chipUnit, double chipWidth, InputDocHM input) {
+    private void tileGenerator(double rowCnt, double chipMinx, double chipMiny, double chipUnit, double chipWidth, InputDoc input) {
 
         double rowTileUnit = chipWidth / rowCnt;
         /*
@@ -310,10 +306,10 @@ public class Processor {
 
             for (RowTile rowTile : rowTiles) {
                 if (!(poly.getMinY() > rowTile.getMaxY() || poly.getMaxY() < rowTile.getMinY())) {
-                    rowTile.addToIsRelateToPolyForDs(poly, true);
+                    rowTile.addToIsRelateToPolygon(poly, true);
                     poly.isRelateToRowTile.put(rowTile, true);
                 } else {
-                    rowTile.addToIsRelateToPolyForDs(poly, false);
+                    rowTile.addToIsRelateToPolygon(poly, false);
                     poly.isRelateToRowTile.put(rowTile, false);
                 }
             }

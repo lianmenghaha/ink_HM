@@ -22,6 +22,7 @@ public class Layer {
 
     private Map<Tile, Integer> mapTileToDryScore;
 
+
     public Layer(int layerIndex, int layerOriPrintScore) {
         this.layerIndex = layerIndex;
         this.layerOriPrintScore = layerOriPrintScore;

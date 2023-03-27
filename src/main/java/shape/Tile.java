@@ -12,14 +12,37 @@ public class Tile {
     private Map<Polygon, Double> dryScoreInc;
 
     private ArrayList<RowTile> aboveRowTiles;
+    private ArrayList<RowTile> belowRowTiles;
+
+    private double tileProcessPeriod;
+
+
 
 
     public Tile(int xInd, int yInd){
+        this.xInd = xInd;
+        this.yInd = yInd;
         this.dryScoreInc = new HashMap<>();
         this.aboveRowTiles = new ArrayList<>();
+        this.belowRowTiles = new ArrayList<>();
 
     }
 
+    public double getTileProcessPeriod() {
+        return tileProcessPeriod;
+    }
+
+    public void setTileProcessPeriod(double tileProcessPeriod) {
+        this.tileProcessPeriod = tileProcessPeriod;
+    }
+
+    public ArrayList<RowTile> getBelowRowTiles() {
+        return belowRowTiles;
+    }
+
+    public void addToBelowRowTiles(RowTile belowRowTile) {
+        this.belowRowTiles.add(belowRowTile);
+    }
 
     public ArrayList<RowTile> getAboveRowTiles() {
         return aboveRowTiles;

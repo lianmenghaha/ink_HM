@@ -5,6 +5,7 @@ import shape.Polygon;
 import shape.Rectangle;
 import shape.RowTile;
 import shape.Tile;
+import simShape.SimLayer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,6 +25,14 @@ public class InputDoc {
     private ArrayList<Tile> allTiles;
     private ArrayList<RowTile> allRowTiles;
 
+    //HM
+    private ArrayList<Solution> solutions;
+
+    //SIM
+    private int rowCnt;
+    private double scale;
+    private ArrayList<SimLayer> simLayers;
+
 
     public InputDoc() {
         this.allPolys = new ArrayList<>();
@@ -31,15 +40,54 @@ public class InputDoc {
         this.mapNameToPoly = new HashMap<>();
         this.allTiles = new ArrayList<>();
         this.allRowTiles = new ArrayList<>();
+        this.solutions = new ArrayList<>();
+        this.simLayers = new ArrayList<>();
     }
 
     public InputDoc(String name, Rectangle chip, ArrayList<Polygon> polygons, ArrayList<Tile> tiles, ArrayList<RowTile> rowTiles) {
         this.name = name;
         this.chip = chip;
-
         this.allPolys = polygons;
         this.allTiles = tiles;
         this.allRowTiles = rowTiles;
+    }
+
+    //HM
+    public ArrayList<Solution> getSolutions() {
+        return solutions;
+    }
+
+    public void addToSolutions(Solution solution) {
+        this.solutions.add(solution);
+    }
+
+    //SIM
+    public int getRowCnt() {
+        return rowCnt;
+    }
+
+    public void setRowCnt(int rowCnt) {
+        this.rowCnt = rowCnt;
+    }
+
+    public double getScale() {
+        return scale;
+    }
+
+    public void setScale(double scale) {
+        this.scale = scale;
+    }
+
+    public ArrayList<SimLayer> getSimLayers() {
+        return simLayers;
+    }
+
+    public void addToSimLayers(SimLayer simLayer) {
+        this.simLayers.add(simLayer);
+    }
+
+    public void setSimLayers(ArrayList<SimLayer> simLayers) {
+        this.simLayers = simLayers;
     }
 
     public Rectangle getChip() {

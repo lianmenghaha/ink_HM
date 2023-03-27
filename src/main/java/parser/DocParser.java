@@ -2,6 +2,7 @@ package parser;
 
 import org.apache.commons.math3.special.Erf;
 import shape.*;
+import simShape.SimLayer;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -10,13 +11,13 @@ import java.util.Map;
 
 public class DocParser {
 
-    private InputDocHM parser;
+    private InputDoc parser;
 
     public DocParser() {
-        this.parser = new InputDocHM();
+        parser = new InputDoc();
     }
 
-    public void processInput(String[] input){
+    public void processInput(String[] input) {
         /*
         Read files
          */
@@ -24,13 +25,18 @@ public class DocParser {
             if (input[i].equals("")) continue;
             else if (input[i].contains("xtile")) {
                 this.parser.setXtile(Integer.parseInt(input[i].substring(6)));
-                //System.err.println(this.parseDoc.getXtile());
             } else if (input[i].contains("ytile")) {
                 this.parser.setYtile(Integer.parseInt(input[i].substring(6)));
             } else if (input[i].contains("unit")) {
                 this.parser.setUnit(Double.parseDouble(input[i].substring(5)));
-                //System.out.println(this.parseDoc.getUnit());
-            } else if (input[i].contains("Chip")) {
+            }else if (input[i].contains("scale")){
+                this.parser.setScale(Double.parseDouble(input[i].substring(6)));
+            }
+            else if (input[i].contains("rowCnt")){
+                this.parser.setRowCnt(Integer.parseInt(input[i].substring(7)));
+                //System.out.println(parseDoc.getUnit());
+            }
+            else if (input[i].contains("Chip")) {
                 Rectangle chip = new Rectangle();
                 chip.name = "chip";
                 i++;
@@ -85,7 +91,7 @@ public class DocParser {
                 i++;
                 while (!input[i].equals("FIN")) {
                     if (input[i].contains("Layer")) {
-                        String str = input[i].substring(5,6);
+                        String str = input[i].substring(5, 6);
                         int layer_cnt = Integer.parseInt(str);
                         tmpStr = input[i].split(" ");
                         int layerIntPs = Integer.parseInt(tmpStr[tmpStr.length - 1]);
@@ -95,6 +101,23 @@ public class DocParser {
                         String[] polys = input[i].split(" ");
                         for (String polyName : polys) {
                             layer.addToLayerPolyNames(polyName);
+                        }
+                    }
+                    i++;
+                }
+
+            } else if (input[i].contains("Optimal")) {
+                i++;
+                while (!input[i].equals("FIN")) {
+                    if (input[i].contains("Layer")) {
+                        String str = input[i].substring(5, 6);
+                        int layer_cnt = Integer.parseInt(str);
+                        SimLayer simLayer = new SimLayer(layer_cnt);
+                        this.parser.addToSimLayers(simLayer);
+                        i++;
+                        String[] polyNames = input[i].split(" ");
+                        for (String polyName : polyNames) {
+                            simLayer.addToLayerPolygonNames(polyName);
                         }
                     }
                     i++;
@@ -132,11 +155,9 @@ public class DocParser {
         this.processInput(this.readFiles(path));
     }
 
-    public InputDocHM getParser() {
+    public InputDoc getParser() {
         return parser;
     }
-
-
 
 
 }

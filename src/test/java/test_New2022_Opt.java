@@ -1,6 +1,8 @@
 import parser.OutputDoc;
 import processor.DrawPdf;
-import processor.Processor;
+import processor.ProcessorOldSim;
+import processor.ProcessorSIM;
+import processor.SimDrawPdf;
 
 import java.io.FileNotFoundException;
 import java.time.Duration;
@@ -8,16 +10,16 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
-public class test_New2022_20_after {
+public class test_New2022_Opt {
 
     public static void main (String[] args) throws FileNotFoundException {
 
         LocalDateTime start = LocalDateTime.now();
         System.out.println("Program Starts at: "+ DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss.SSS").format(start));
 
-        Processor processor = new Processor();
-        OutputDoc outputDoc = processor.process("input_HM/NEW2022_rowUnit20_after1000");
-        DrawPdf drawPdf = new DrawPdf(outputDoc, "result_HM/NEW2022_rowUnit20_after1000");
+        ProcessorSIM processor = new ProcessorSIM();
+        OutputDoc outputDoc = processor.process("input_HM/NEW2022_NM");
+        SimDrawPdf drawPdf = new SimDrawPdf(outputDoc, "result_HM/NEW2022_NM");
 
         LocalDateTime end = LocalDateTime.now();
         Duration duration = Duration.between(start,end);

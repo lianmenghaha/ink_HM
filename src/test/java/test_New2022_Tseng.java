@@ -1,6 +1,6 @@
 import parser.OutputDoc;
 import processor.DrawPdf;
-import processor.Processor;
+import processor.ProcessorOldSim;
 
 import java.io.FileNotFoundException;
 import java.time.Duration;
@@ -15,8 +15,8 @@ public class test_New2022_Tseng {
         LocalDateTime start = LocalDateTime.now();
         System.out.println("Program Starts at: "+ DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss.SSS").format(start));
 
-        Processor processor = new Processor();
-        OutputDoc outputDoc = processor.process("input_HM/NEW2022_Tseng/Tseng11");
+        ProcessorOldSim processorOldSim = new ProcessorOldSim();
+        OutputDoc outputDoc = processorOldSim.process("input_HM/NEW2022_Tseng/Tseng11");
         DrawPdf drawPdf = new DrawPdf(outputDoc, "result_HM/Tseng");
 
         LocalDateTime end = LocalDateTime.now();
