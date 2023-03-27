@@ -73,7 +73,7 @@ public class ProcessorSIM {
             }
 
             /*
-            Layer PrintScore Calculation
+            Layer PrintScore Calculation also
              */
             int layerPrintScore = 0;
             for (RowTile rowTile : input.getAllRowTiles()) {
