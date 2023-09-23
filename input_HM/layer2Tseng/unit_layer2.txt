@@ -1,0 +1,4 @@
+xtile 96
+ytile 96
+unit 0.721000
+FIN

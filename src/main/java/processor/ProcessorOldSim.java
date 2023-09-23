@@ -5,6 +5,7 @@ import parser.*;
 import shape.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Map;
 
 public class ProcessorOldSim {
@@ -13,6 +14,7 @@ public class ProcessorOldSim {
     public ProcessorOldSim() {
         this.parser = new DocParser();
     }
+
     public OutputDoc process(String inputPath) {
         parser.parseInputToDoc(inputPath);
         InputDoc input = parser.getParser();
@@ -29,11 +31,56 @@ public class ProcessorOldSim {
         /*
         Identify SubPolygons
          */
-        identifySubPolygons(input.getAllPolys(), input.getAllSubRects());
+        //identifySubPolygons(input.getAllPolys(), input.getAllSubRects());
+        identifySubRectangles(input.getAllPolys(), input.getAllSubRects());
+        System.out.println(input.getAllPolys().size());
+        System.out.println(input.getAllSubRects().size());
+
+        for (Polygon poly : input.getAllPolys()) {
+            if (poly.getSubPolys().size() != 0) {
+                System.out.println(poly.name + " " + poly.getSubPolys().size());
+                for (Rectangle subPoly : poly.getSubPolys()) {
+                    System.out.print(" " + subPoly.name);
+                }
+                System.out.println();
+            }
+
+        }
+
+        //only for heater
+//        Polygon o1 = input.getAllPolys().get(0);
+//        Polygon o27 = input.getAllPolys().get(26);
+//        for (int i = 0; i < 4; i++){
+//            o1.getSubPolys().add(input.getAllSubRects().get(i));
+//        }
+//        for (int i = 4; i < 8; i++){
+//            o27.getSubPolys().add(input.getAllSubRects().get(i));
+//        }
+//
+//
+//        for (Polygon polygon : input.getAllPolys()){
+//            for (Rectangle sub : polygon.getSubPolys()){
+//                System.out.println(sub.name);
+//                for (Pair vertex : sub.vertices){
+//                    System.out.println("x=" + vertex.x + ", y=" + vertex.y);
+//                }
+//
+//            }
+//        }
+
+//        for (Rectangle sub : input.getAllSubRects()){
+//            System.out.println(sub.name);
+//            for (Pair vertex : sub.vertices){
+//                System.out.println("x=" + vertex.x + ", y=" + vertex.y);
+//            }
+//        }
+
 
         double scale = 0.35;
+        //only for merged
+//        double scale = 100;
         double rowCnt = 1000.0;
-
+//        double rowCnt = 84.0;
         /*
         rescale the chip
          */
@@ -53,7 +100,7 @@ public class ProcessorOldSim {
         double sigma = 0.5;
         input.setSigma(sigma);
         double cons_coefficient = Math.sqrt(Math.PI) * sigma / Math.sqrt(8);
-        double coefficient = 1.0/(Math.sqrt(2) * sigma);
+        double coefficient = 1.0 / (Math.sqrt(2) * sigma);
         printAndDryScoreIncPolyToTile(cons_coefficient, coefficient, input.getAllPolys(), input.getAllTiles(), input.getAllRowTiles());
 
         //todo: according to the rowTile we need different a and b
@@ -100,12 +147,12 @@ public class ProcessorOldSim {
                 Layer DryScore Calculation
                  */
                 //ArrayList<Double> allTileDs = new ArrayList<>();
-                for (Tile tile : input.getAllTiles()){
+                for (Tile tile : input.getAllTiles()) {
                     /*
                     DryScore of each Tile
                      */
                     double tileDs = 0.0;
-                    for (Polygon poly : layer.getLayerPolys()){
+                    for (Polygon poly : layer.getLayerPolys()) {
                         tileDs += tile.getDryScoreInc().get(poly);
                     }
                     //allTileDs.add(tileDs);
@@ -115,8 +162,8 @@ public class ProcessorOldSim {
                     PrintScore of the same Tile
                      */
                     int tilePs = 0;
-                    for (RowTile rowTile : layer.getPrintRowTiles()){
-                        if (rowTile.getMinY() > tile.getMaxY()){
+                    for (RowTile rowTile : layer.getPrintRowTiles()) {
+                        if (rowTile.getMinY() > tile.getMaxY()) {
                             tilePs = tilePs + 1;
                         }
                     }
@@ -135,8 +182,8 @@ public class ProcessorOldSim {
                 Find the tile with maximum Rest DryTime
                  */
                 int layerDryScore = 0;
-                for (Tile tile : input.getAllTiles()){
-                    if (layer.getMapTileToDryScore().get(tile) > layerDryScore){
+                for (Tile tile : input.getAllTiles()) {
+                    if (layer.getMapTileToDryScore().get(tile) > layerDryScore) {
                         layerDryScore = layer.getMapTileToDryScore().get(tile);
                         layer.setDryTile(tile);
                     }
@@ -146,21 +193,18 @@ public class ProcessorOldSim {
                 solutionDryScore += layerDryScore;
 
 
-
-
-
             }
 
             sol.setTotDryScore(solutionDryScore);
             sol.setTotPrintScore(solutionPrintScore);
 
-            if (solutionDryScore + solutionPrintScore < findOptSumPDScore){
+            if (solutionDryScore + solutionPrintScore < findOptSumPDScore) {
                 optsol_cnt = sol_cnt;
             }
         }
 
         Solution optimalSolution = solutions.get(optsol_cnt);
-        for (Layer layer : optimalSolution.getLayers()){
+        for (Layer layer : optimalSolution.getLayers()) {
             System.out.println("Layer" + layer.getLayerIndex());
             System.out.println("LayerPrintScore = " + layer.getLayerPrintScore());
             System.out.println("LayerDryScore = " + layer.getLayerDryScore());
@@ -170,24 +214,21 @@ public class ProcessorOldSim {
             System.out.println();*/
         }
         System.out.println("LayerPrintScore:");
-        for (Layer layer : optimalSolution.getLayers()){
+        for (Layer layer : optimalSolution.getLayers()) {
             System.out.println(layer.getLayerPrintScore());
         }
         System.out.println("LayerDryScore:");
-        for (Layer layer : optimalSolution.getLayers()){
+        for (Layer layer : optimalSolution.getLayers()) {
             System.out.println(layer.getLayerDryScore());
         }
 
 
         OutputDoc output = new OutputDoc(input.getName(), input.getChip(), input.getAllPolys(), input.getAllTiles(), input.getAllRowTiles(), optimalSolution);
+        output.setSubRectangles(input.getAllSubRects());
         return output;
 
 
     }
-
-
-
-
 
 
     private void identifySubPolygons(ArrayList<Polygon> polygons, ArrayList<Rectangle> subRects) {
@@ -195,16 +236,66 @@ public class ProcessorOldSim {
             ArrayList<Pair> subVertices = sub.vertices;
             for (Polygon ori : polygons) {
                 if (ori.vertices.size() == 4) continue;
-                int cnt = 0;
+                int cntInside = 0;
                 for (Pair subVx : subVertices) {
-                    if (isInside(ori, subVx)) cnt++;
+                    if (isInside(ori, subVx)) cntInside++;
                 }
-                if (cnt == subVertices.size()) {
+//                if (cnt == subVertices.size()) {
+//                    ori.getSubPolys().add(sub);
+//                    sub.setOriginalPoly(ori);
+//                }
+                int cntVertex = 0;
+                for (Pair subVx : subVertices) {
+                    if (isVertex(ori, subVx)) cntVertex++;
+                }
+                if (cntVertex >= 2 || cntInside == subVertices.size()) {
                     ori.getSubPolys().add(sub);
                     sub.setOriginalPoly(ori);
                 }
             }
         }
+    }
+
+    private Boolean isVertex(Polygon oriPoly, Pair vertex) {
+        for (Pair oriVertex : oriPoly.vertices) {
+            if (oriVertex.x == vertex.x && oriVertex.y == vertex.y) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void identifySubRectangles(ArrayList<Polygon> polygons, ArrayList<Rectangle> subRects) {
+        ArrayList<Rectangle> copySubRects = new ArrayList<>(subRects);
+
+        for (Polygon ori : polygons) {
+            if (ori.vertices.size() == 4) continue;
+
+            if (ori.vertices.size() == 6) {
+                ori.getSubPolys().add(copySubRects.get(0));
+                ori.getSubPolys().add(copySubRects.get(1));
+                copySubRects.get(0).setOriginalPoly(ori);
+                copySubRects.get(1).setOriginalPoly(ori);
+                copySubRects.remove(0);
+                copySubRects.remove(0);
+
+            } else if (ori.vertices.size() == 8) {
+                ori.getSubPolys().add(copySubRects.get(0));
+                ori.getSubPolys().add(copySubRects.get(1));
+                ori.getSubPolys().add(copySubRects.get(2));
+                copySubRects.get(0).setOriginalPoly(ori);
+                copySubRects.get(1).setOriginalPoly(ori);
+                copySubRects.get(2).setOriginalPoly(ori);
+                copySubRects.remove(0);
+                copySubRects.remove(0);
+                copySubRects.remove(0);
+
+            } else {
+                System.out.println("Not Support the sub_Polygons");
+            }
+        }
+
+
     }
 
     private void rescaleChip(double scale, Rectangle chip, ArrayList<Polygon> polygons, ArrayList<Rectangle> subRects) {
@@ -252,14 +343,13 @@ public class ProcessorOldSim {
         /*
         RowTile
          */
-        for (int ycnt = 0; ycnt < rowCnt; ++ ycnt){
+        for (int ycnt = 0; ycnt < rowCnt; ++ycnt) {
             double rowTileMiny = chipMiny + ycnt * rowTileUnit;
             RowTile rowTile_ds = new RowTile((ycnt + 1));
             rowTile_ds.setMinY(rowTileMiny);
             rowTile_ds.setMaxY(rowTileMiny + rowTileUnit);
             input.addToAllRowTiles(rowTile_ds);
         }
-
 
 
     }
@@ -378,10 +468,6 @@ public class ProcessorOldSim {
 
         return (count & 1) == 1;
     }
-
-
-
-
 
 
 }

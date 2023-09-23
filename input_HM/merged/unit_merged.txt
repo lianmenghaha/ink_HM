@@ -1,0 +1,4 @@
+xtile 179
+ytile 51
+unit 0.114000
+FIN

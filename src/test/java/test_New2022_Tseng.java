@@ -16,8 +16,8 @@ public class test_New2022_Tseng {
         System.out.println("Program Starts at: "+ DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss.SSS").format(start));
 
         ProcessorOldSim processorOldSim = new ProcessorOldSim();
-        OutputDoc outputDoc = processorOldSim.process("input_HM/NEW2022_Tseng/Tseng11");
-        DrawPdf drawPdf = new DrawPdf(outputDoc, "result_HM/Tseng");
+        OutputDoc outputDoc = processorOldSim.process("input_HM/NEW2022_Tseng/Tseng7");
+        DrawPdf drawPdf = new DrawPdf(outputDoc, "result_HM/NEW2022_Tseng7_2309");
 
         LocalDateTime end = LocalDateTime.now();
         Duration duration = Duration.between(start,end);

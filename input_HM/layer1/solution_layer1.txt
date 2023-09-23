@@ -1,0 +1,8 @@
+Solution0 73
+Layer1 1
+o7 o9 o11 o13 o16 o17
+Layer2 1
+o1 o3 o5 o6 o8 o10 o12 o14 o15 o18
+Layer3 1
+o2 o4
+FIN
